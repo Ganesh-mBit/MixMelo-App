@@ -10,6 +10,7 @@ import { FaUserAlt } from 'react-icons/fa';
 import useAuthMOdal from '@/hooks/useAuthModal';
 import { RxCaretLeft, RxCaretRight } from 'react-icons/rx';
 import { useSupabaseClient } from '@supabase/auth-helpers-react';
+import { toast } from 'react-hot-toast';
 
 import Button from './Button';
 interface HeaderProps {
@@ -29,7 +30,9 @@ const Header: React.FC<HeaderProps> = ({ children, className }) => {
     router.refresh();
 
     if (error) {
-      console.log(error);
+      toast.error(error.message);
+    }else {
+      toast.success('Logged out successfully!');
     }
   };
 

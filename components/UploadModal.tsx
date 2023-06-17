@@ -9,7 +9,7 @@ import { useSupabaseClient } from '@supabase/auth-helpers-react';
 import Modal from './Modal';
 import Input from './Input';
 import Button from './Button';
-import { useUser } from '@supabase/auth-ui-react/dist/components/Auth/UserContext';
+import { useUser } from '@/hooks/useUser';
 
 const UploadModal = () => {
   const { isOpen, onClose } = useUploadMoad();
@@ -39,7 +39,6 @@ const UploadModal = () => {
   };
 
   const onSubmit: SubmitHandler<FieldValues> = async (data) => {
-    // Upload to supabase
     try {
       setIsLoading(true);
       const songFile = data.song?.[0];

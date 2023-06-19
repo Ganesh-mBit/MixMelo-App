@@ -1,6 +1,9 @@
-import getSongsByTitle from '@/actions/getSongsByTitle';
-import Header from '@/components/Header';
 import React from 'react';
+import Header from '@/components/Header';
+
+import getSongsByTitle from '@/actions/getSongsByTitle';
+import SearchInput from '@/components/SearchInput';
+import SearchContent from './SearchContent';
 
 interface SearchProps {
   searchParams: {
@@ -16,8 +19,10 @@ const Search: React.FC<SearchProps> = async ({ searchParams }) => {
       <Header className="from-bg-neutral-900">
         <div className="flex flex-col mb-2 gap-y-6">
           <h1 className="text-white text-3xl font-semibold">Search</h1>
+          <SearchInput />
         </div>
       </Header>
+      <SearchContent songs={songs} />
     </div>
   )
 }

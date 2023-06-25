@@ -15,7 +15,7 @@ export default async function Home() {
         <div className="mb-2">
           <h1 className="text-white font-semibold text-3xl">Welcome back</h1>
           <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-4 2xl:grid-cols-4 gap-3 mt-4">
-            <ListItems image="/images/liked.png" name="Linked Songs" href="" />
+            <ListItems image="/images/liked.png" name="Linked Songs" href="/liked" />
           </div>
         </div>
       </Header>
